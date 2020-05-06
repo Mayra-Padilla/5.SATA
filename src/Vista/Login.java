@@ -100,7 +100,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/unnamed.png"))); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setText("Iniciar sesión");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/PiePagina (2).png"))); // NOI18N
