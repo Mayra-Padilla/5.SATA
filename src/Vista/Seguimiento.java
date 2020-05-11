@@ -139,8 +139,6 @@ public class Seguimiento extends javax.swing.JFrame {
 
         jLabel3.setText("Número de control:");
 
-        jTextField1.setText("jTextField1");
-
         jButton1.setText("Buscar");
 
         jButton2.setText("Actualizar");
