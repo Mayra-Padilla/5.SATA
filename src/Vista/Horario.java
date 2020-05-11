@@ -141,7 +141,7 @@ public class Horario extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "CLAVE", "Materia", "Docente", "Semestre", "Creditos", "Tipo", "Horario"
+                "CLAVE", "Materia", "Docente", "Semestre", "Créditos", "Tipo", "Horario"
             }
         ) {
             Class[] types = new Class [] {
@@ -158,7 +158,7 @@ public class Horario extends javax.swing.JFrame {
 
         jButton4.setText("Buscar");
 
-        jLabel1.setText("Numero de clave: ");
+        jLabel1.setText("Número de clave: ");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +167,7 @@ public class Horario extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setText("Asignacion de Horario");
+        jLabel3.setText("Asignación de Horario");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
