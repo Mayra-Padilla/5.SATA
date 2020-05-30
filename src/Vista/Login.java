@@ -5,15 +5,23 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mayra
  */
 public class Login extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Login
-     */
+    //La variable cin realizara la interaccion con la BD
+    Connection conn = Controlador.conexion.getConexion();
+    //ps sera la variable que utilizaremos para ejecutar consultas
+    PreparedStatement ps;
+    
     public Login() {
         initComponents();
     }
@@ -32,8 +40,8 @@ public class Login extends javax.swing.JFrame {
         btnEntrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtNumeroControl = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -47,6 +55,11 @@ public class Login extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Aceptar.png"))); // NOI18N
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Número de control:");
@@ -54,9 +67,9 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Contraseña:");
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtNumeroControl.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtContraseña.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 0));
         jPanel1.setForeground(new java.awt.Color(204, 0, 0));
@@ -140,8 +153,8 @@ public class Login extends javax.swing.JFrame {
                                             .addComponent(jLabel3))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField1)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtNumeroControl)
+                                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel5)))
@@ -163,11 +176,11 @@ public class Login extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNumeroControl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnEntrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,6 +218,43 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        // TODO add your handling code here:
+        //Obtenemos el texto dentro de cada caja de texto
+        try{
+            String usuario = txtNumeroControl.getText();
+            int convertirUsuario = Integer.parseInt(usuario);
+            String contrasenia = txtContraseña.getText();
+            //declaramos la consulta para checar si existe el usuario y el pass
+            String consulta = "SELECT usuario, contraseña FROM inicioSesion WHERE usuario = "+ convertirUsuario 
+                            +" AND contraseña = '"+contrasenia+"'";
+            //declaramos las variables para ejecutar las consultas
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(consulta);
+            String sesion = "UPDATE inicioSesion SET estado = 1 WHERE usuario = "+convertirUsuario;
+            ps = conn.prepareStatement(sesion);
+            //el ciclo recorrera los renglones y los if checaran que estos no esten vacios
+            while(rs.next()){
+                if (rs.getString("usuario") != null) {
+                    if (rs.getString("contraseña") != null) {
+                        //ejecutamos la actualizacion para activar sesion
+                        ps.executeUpdate();
+                        //cerramos la ventana actual y abrimos la ventana prueba
+                        Menu obj = new Menu();
+                        obj.setVisible(true);
+                        this.dispose();
+                    }
+                }
+            }
+        } catch (SQLException ex) {  
+            JOptionPane.showMessageDialog(this, "El usuario o la contraseña son incorrectos",
+                                            "Error",JOptionPane.ERROR_MESSAGE);
+        } 
+        //limpiamos las cajas de texto
+        txtNumeroControl.setText(null);
+        txtContraseña.setText("");
+    }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,7 +303,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JTextField txtNumeroControl;
     // End of variables declaration//GEN-END:variables
 }
