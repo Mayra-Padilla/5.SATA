@@ -135,7 +135,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
         direccion.setText("Dirección:");
 
-        prepa.setText("Preparatoria:");
+        prepa.setText("Promedio de preparatoria:");
 
         tel.setText("Teléfono:");
 
@@ -218,9 +218,9 @@ public class AgregarUsuario extends javax.swing.JFrame {
                                     .addComponent(tel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(telefono))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(prepa)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(preparatoria))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(direccion)

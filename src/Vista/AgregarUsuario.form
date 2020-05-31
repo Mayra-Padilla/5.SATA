@@ -100,9 +100,9 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="telefono" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="prepa" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="preparatoria" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -321,7 +321,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="prepa">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Preparatoria:"/>
+            <Property name="text" type="java.lang.String" value="Promedio de preparatoria:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="tel">
