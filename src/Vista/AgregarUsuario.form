@@ -361,7 +361,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="enfermedades">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Enfermedades/Alergias:"/>
+            <Property name="text" type="java.lang.String" value="Canalizaciones"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="nombre">

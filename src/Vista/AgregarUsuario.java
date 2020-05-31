@@ -151,7 +151,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
         sem.setText("Semestre:");
 
-        enfermedades.setText("Enfermedades/Alergias:");
+        enfermedades.setText("Canalizaciones");
 
         correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
