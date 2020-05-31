@@ -5,11 +5,23 @@
  */
 package Vista;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mayra
  */
 public class AgregarUsuario extends javax.swing.JFrame {
+
+    //La variable cin realizara la interaccion con la BD
+    Connection conn = Controlador.conexion.getConexion();
+    //ps sera la variable que utilizaremos para ejecutar consultas
+    PreparedStatement ps;
 
     /**
      * Creates new form Canalizaciones
@@ -148,6 +160,11 @@ public class AgregarUsuario extends javax.swing.JFrame {
         });
 
         newUser.setText("Agregar Usuario");
+        newUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -309,6 +326,67 @@ public class AgregarUsuario extends javax.swing.JFrame {
     private void correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_correoActionPerformed
+
+    //actionAPerformed para nuevos usuarios
+    private void newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserActionPerformed
+        //Obtenemos el texto dentro de cada caja de texto
+        try {
+            String usuario = matricula.getText();
+            int convertirUsuario = Integer.parseInt(usuario);
+            String nUsuario = nombre.getText();
+            String direcc = dir.getText();
+            String prep = preparatoria.getText();
+            int convertirPrep=Integer.parseInt(prep);
+            String cel = telefono.getText();
+            int convertirTel = Integer.parseInt(cel);
+            String mail = correo.getText();
+            String tutor = papa.getText();
+            String tutora = mama.getText();
+            String cel2 = emergencia.getText();
+            int convertirTel2 = Integer.parseInt(cel2);
+            String estudio = career.getText();
+            String semest = semestre.getText();
+            int convertirSem = Integer.parseInt(semest);
+            String salud = sickness.getText();
+
+            //declaramos la consulta para checar si existe el usuario y el pass
+            String insertar = "INSERT INTO alumno VALUES (" + matricula+","+convertirSem+","
+                    +dir+","+convertirPrep+","+convertirSem+","+convertirSem+","+convertirSem+")";
+            //declaramos las variables para ejecutar las consultas
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertar);
+            String consultar = "SELECT*FROM alumno";
+            Statement st2 = conn.createStatement();
+            ResultSet rs2 = st2.executeQuery(consultar);
+            //el ciclo recorrera los renglones y los if checaran que estos no esten vacios
+            while (rs2.next()) {
+                if (rs2.getString("idAlumno") != null) {
+                    //ejecutamos la actualizacion para activar sesion
+                    ps.executeUpdate();
+                    //cerramos la ventana actual y abrimos la ventana prueba
+                    Menu obj = new Menu();
+                    obj.setVisible(true);
+                    this.dispose();
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "El usuario o la contraseña son incorrectos",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        //limpiamos las cajas de texto
+        matricula.setText(null);
+        nombre.setText("");
+        dir.setText(null);
+        preparatoria.setText(null);
+        telefono.setText(null);
+        correo.setText(null);
+        papa.setText(null);
+        mama.setText(null);
+        emergencia.setText(null);
+        career.setText(null);
+        semestre.setText(null);
+        sickness.setText(null);
+    }//GEN-LAST:event_newUserActionPerformed
 
     /**
      * @param args the command line arguments
