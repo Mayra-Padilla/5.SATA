@@ -352,7 +352,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
             //declaramos la consulta para checar si existe el usuario y el pass
             String insertar = "INSERT INTO alumno VALUES (" + matricula+","+convertirSem+","
                     +dir+","+estudio+","+tutor+","+tutora+","+convertirPrep+","+salud+
-                    ","+convertirTel2+"")";
+                    ","+convertirTel2+")";
             //declaramos las variables para ejecutar las consultas
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(insertar);
