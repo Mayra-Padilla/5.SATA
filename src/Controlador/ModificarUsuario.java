@@ -10,10 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- *
- * @author Adrian
- */
 public class ModificarUsuario {
 
     //La variable cin realizara la interaccion con la BD
