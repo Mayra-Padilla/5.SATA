@@ -45,7 +45,8 @@ public class InicioSesion {
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "",
+            JOptionPane.showMessageDialog(null, "Nombre de usuario o contraseña "
+                    + "son incorrectos o no existen",
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
         //limpiamos las cajas de texto
