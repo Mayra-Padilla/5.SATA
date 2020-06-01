@@ -18,7 +18,10 @@ import Controlador.AgregarUser;
  */
 public class AgregarUsuario extends javax.swing.JFrame {
 
-
+/*Requrimientos:
+    Clase:
+    Metodos:
+    */
     /**
      * Creates new form Canalizaciones
      */
