@@ -371,7 +371,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "El usuario o la contraseña son incorrectos",
+            JOptionPane.showMessageDialog(this, "El usuario es incorrecto",
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
         //limpiamos las cajas de texto
