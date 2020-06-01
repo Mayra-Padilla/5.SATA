@@ -6,7 +6,7 @@
     El caso de uso utiliza para el funcionamiento:
         -Número de  requerimientos: RF_01, FR_19, RN_21
         -Clase: Login, InicioSesion
-        -Metodos: verficarSesion
+        -Metodos: getConexion, Consulta
  */
 package Controlador;
 
