@@ -3,6 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/* 5.Patriots
+    Proyecto: SATA
+    Version: 1.1
+    01/Junio/2020
+    Caso de uso: Menu 
+    El caso de uso utiliza para el funcionamiento:
+        -Número de  requerimientos: FR_01, RF_02, FR_03, FR_09, RF_10, FR_11, RN_18, RN_24
+        -Clase: Menu
+        -Metodos: Menu, btnControlUserActionPerformed
+ */
+
 package Vista;
 
 /**
