@@ -231,7 +231,7 @@ public class ControlUser extends javax.swing.JFrame {
 
     private void btnAgregarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUserActionPerformed
         // TODO add your handling code here:
-        AgregarUsuario au = new AgregarUsuario();
+        AgregarUsuario au = new AgregarUsuario("");
         au.setVisible(true);
     }//GEN-LAST:event_btnAgregarUserActionPerformed
 

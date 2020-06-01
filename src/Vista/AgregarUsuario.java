@@ -567,7 +567,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarUsuario().setVisible(true);
+                new AgregarUsuario("").setVisible(true);
             }
         });
     }
