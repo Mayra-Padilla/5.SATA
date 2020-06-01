@@ -3,6 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/* 5.Patriots
+    Proyecto: SATA
+    Version: 1.1
+    01/Mayo/2020
+    Caso de uso: AgregarUsuario
+    El caso de uso utiliza para el funcionamiento:
+        -Número de  requerimientos: RF_17, RN_21
+        -Clase: agregarAlumno, agregarProfesor
+        -Metodos: agreggarUser, Login, InicicioSesion
+ */
+
 package Controlador;
 
 import Vista.Menu;
