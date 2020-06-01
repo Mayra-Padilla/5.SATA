@@ -360,12 +360,12 @@ public class AgregarUsuario extends javax.swing.JFrame {
             Statement st2 = conn.createStatement();
             ResultSet rs2 = st2.executeQuery(consultar);
             //el ciclo recorrera los renglones y los if checaran que estos no esten vacios
-            while (rs2.next()) {
-                if (rs2.getString("idAlumno") != null) {
+            while (rs.next()) {
+                if (rs.getString("idAlumno") != null) {
                     //ejecutamos la actualizacion para activar sesion
                     ps.executeUpdate();
                     //cerramos la ventana actual y abrimos la ventana prueba
-                    Menu obj = new Menu();
+                    AgregarUsuario obj = new AgregarUsuario();
                     obj.setVisible(true);
                     this.dispose();
                 }
