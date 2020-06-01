@@ -23,13 +23,14 @@ public class TablaCU {
     DefaultTableModel tabla;
 
     public void llenarTabla(JTable tablaCU) {
+        String col[] = {"IdUsuario", "Nombre", "apPaterno", "apMaterno"};
+        DefaultTableModel model = new DefaultTableModel(null, col) {
+            //la tabla no es editable
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return false;
+            }
+        };
 
-        DefaultTableModel model = new DefaultTableModel();
-        tablaCU.setModel(model);
-        model.addColumn("IdUsuario");
-        model.addColumn("Nombre");
-        model.addColumn("apPaterno");
-        model.addColumn("apMaterno");
         String consulta = "SELECT u.idUsuario,u.nombre,"
                 + "u.apPaterno,u.apMaterno\n"
                 + "FROM usuario u ";
@@ -45,6 +46,7 @@ public class TablaCU {
                 dato[3] = result.getString(4);
                 model.addRow(dato);
             }
+            tablaCU.setModel(model);
         } catch (SQLException e) {
             e.printStackTrace();;
         }
