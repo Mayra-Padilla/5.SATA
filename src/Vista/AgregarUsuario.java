@@ -4,9 +4,15 @@
  * and open the template in the editor.
  */
 
-/* Número de  requerimientos: RF_17, RN_21
-    Clase: agregarUsuario
-    Metodos: agreggarUser, Login, InicicioSesion
+/* 5.Patriots
+    Proyecto: SATA
+    Version: 1.1
+    01/Mayo/2020
+    Caso de uso: AgregarUsuario
+    El caso de uso utiliza para el funcionamiento:
+        -Número de  requerimientos: RF_17, RN_21
+        -Clase: agregarUsuario, newUserActionPerformed
+        -Metodos: agreggarUser, Login, InicicioSesion
  */
 
 package Vista;
