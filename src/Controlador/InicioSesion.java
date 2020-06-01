@@ -32,20 +32,20 @@ public class InicioSesion {
             String sesion = "UPDATE inicioSesion SET estado = 1 WHERE usuario = " + convertirUsuario;
             ps = conn.prepareStatement(sesion);
             //el ciclo recorrera los renglones y los if checaran que estos no esten vacios
-            while (rs.next()) {
-                if (rs.getString("usuario") != null) {
-                    if (rs.getString("contraseña") != null) {
-                        //ejecutamos la actualizacion para activar sesion
-                        ps.executeUpdate();
-                        //cerramos la ventana actual y abrimos la ventana prueba
-                        Menu obj = new Menu();
-                        obj.setVisible(true);
-                        t.dispose();
-                    }
+            rs.next();
+            if (rs.getString("usuario") != null) {
+                if (rs.getString("contraseña") != null) {
+                    //ejecutamos la actualizacion para activar sesion
+                    ps.executeUpdate();
+                    //cerramos la ventana actual y abrimos la ventana prueba
+                    Menu obj = new Menu();
+                    obj.setVisible(true);
+                    t.dispose();
                 }
             }
+
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex,
+            JOptionPane.showMessageDialog(null, "",
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
         //limpiamos las cajas de texto

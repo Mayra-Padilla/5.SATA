@@ -13,7 +13,7 @@ public class conexion {
     
     public static Connection getConexion(){
 //        DESKTOP-JH0QBD0
-        String url = "jdbc:sqlserver://AdrianTorres:1433;databaseName=TutoriasITL;";
+        String url = "jdbc:sqlserver://DESKTOP-JH0QBD0:1433;databaseName=TutoriasITL;";
         try{               //com.microsoft.sqlserver.jdbc
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch(ClassNotFoundException e){
@@ -21,7 +21,7 @@ public class conexion {
                 "Error de conexión", JOptionPane.ERROR_MESSAGE);
             }
         try{
-            contacto = DriverManager.getConnection(url,"sa","adriantorr9");
+            contacto = DriverManager.getConnection(url,"sa","root");
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null, "No se pudo establecer la conexion, REVISAR DRIVER " + e.getMessage(), 
                 "Error de conexión", JOptionPane.ERROR_MESSAGE);
