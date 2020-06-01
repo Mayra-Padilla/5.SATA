@@ -33,11 +33,11 @@ public class ControlUser extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnAgregarUser = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         Modifica = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbCU = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
+        btnModificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,13 +91,6 @@ public class ControlUser extends javax.swing.JFrame {
         btnAgregarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarUserActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Modificar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -160,6 +153,13 @@ public class ControlUser extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Control de usuario");
 
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,8 +183,8 @@ public class ControlUser extends javax.swing.JFrame {
                                 .addGap(165, 165, 165))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnAgregarUser)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2)
+                                .addGap(20, 20, 20)
+                                .addComponent(btnModificar)
                                 .addGap(18, 18, 18)
                                 .addComponent(Modifica)))))
                 .addContainerGap(21, Short.MAX_VALUE))
@@ -201,8 +201,8 @@ public class ControlUser extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAgregarUser)
-                            .addComponent(jButton2)
-                            .addComponent(Modifica))
+                            .addComponent(Modifica)
+                            .addComponent(btnModificar))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(54, 54, 54)
@@ -239,6 +239,10 @@ public class ControlUser extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,7 +283,7 @@ public class ControlUser extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Modifica;
     private javax.swing.JButton btnAgregarUser;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
