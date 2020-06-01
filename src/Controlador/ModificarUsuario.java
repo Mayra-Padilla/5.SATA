@@ -29,16 +29,18 @@ public class ModificarUsuario {
 //INNER JOIN usuario	u
 //on u.idUsuario = p.idProfesor where idProfesor = 11123
     public int VerificarId(String id) {
-        try{
-        String consultaA = "SELECT idProfesor FROM profesor "
-                + "WHERE idProfesor =" + id;
+        try {
+            String consultaP = "SELECT idProfesor FROM profesor "
+                    + "WHERE idProfesor =" + id;
+
             System.out.println(id);
-//        Statement st = conn.createStatement();
-//        ResultSet rs = st.executeQuery(consultaP);
-//        while(rs.next()){
-//            System.out.println(rs.getString(0));
-//        }
-        }catch(Exception e){
+            Statement st;
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery(consultaP);
+            while (rs.next()) {
+                System.out.println(rs.getString(1));
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
         return 0;
