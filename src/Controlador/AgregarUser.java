@@ -14,10 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Adrian
- */
+
 public class AgregarUser {
     //La variable cin realizara la interaccion con la BD
 
