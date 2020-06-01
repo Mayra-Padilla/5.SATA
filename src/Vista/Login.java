@@ -3,6 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/* 5.Patriots
+    Proyecto: SATA
+    Version: 1.1
+    01/Junio/2020
+    Caso de uso: iniciarSesion 
+    El caso de uso utiliza para el funcionamiento:
+        -Número de  requerimientos: RF_01, FR_19, RN_21, RN_24
+        -Clase: Login, InicioSesion
+        -Metodos: Login, btnEntrarActionPerformed
+ */
+
 package Vista;
 
 import java.sql.Connection;
