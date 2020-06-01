@@ -238,6 +238,7 @@ public class ControlUser extends javax.swing.JFrame {
         // TODO add your handling code here:
         AgregarUsuario au = new AgregarUsuario("");
         au.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAgregarUserActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
