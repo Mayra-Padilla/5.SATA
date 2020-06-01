@@ -11,19 +11,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import Controlador.InicioSesion;
 
 /**
  *
  * @author Mayra
  */
 public class Login extends javax.swing.JFrame {
-    //La variable cin realizara la interaccion con la BD
-    Connection conn = Controlador.conexion.getConexion();
-    //ps sera la variable que utilizaremos para ejecutar consultas
-    PreparedStatement ps;
-    
+//    //La variable cin realizara la interaccion con la BD
+//    Connection conn = Controlador.conexion.getConexion();
+//    //ps sera la variable que utilizaremos para ejecutar consultas
+//    PreparedStatement ps;
+
     public Login() {
+
+        this.setVisible(true);
+        this.setLocation(250, 100);
+        this.setResizable(false);
         initComponents();
+
     }
 
     /**
@@ -222,38 +228,19 @@ public class Login extends javax.swing.JFrame {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
         //Obtenemos el texto dentro de cada caja de texto
-        try{
-            String usuario = txtNumeroControl.getText();
-            int convertirUsuario = Integer.parseInt(usuario);
-            String contrasenia = txtContraseña.getText();
-            //declaramos la consulta para checar si existe el usuario y el pass
-            String consulta = "SELECT usuario, contraseña FROM inicioSesion WHERE usuario = "+ convertirUsuario 
-                            +" AND contraseña = '"+contrasenia+"'";
-            //declaramos las variables para ejecutar las consultas
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(consulta);
-            String sesion = "UPDATE inicioSesion SET estado = 1 WHERE usuario = "+convertirUsuario;
-            ps = conn.prepareStatement(sesion);
-            //el ciclo recorrera los renglones y los if checaran que estos no esten vacios
-            while(rs.next()){
-                if (rs.getString("usuario") != null) {
-                    if (rs.getString("contraseña") != null) {
-                        //ejecutamos la actualizacion para activar sesion
-                        ps.executeUpdate();
-                        //cerramos la ventana actual y abrimos la ventana prueba
-                        Menu obj = new Menu();
-                        obj.setVisible(true);
-                        this.dispose();
-                    }
-                }
+        InicioSesion is = new InicioSesion();
+        if (!"".equals(txtContraseña.getText())) {
+            if (!"".equals(txtNumeroControl.getText())) {
+                is.verificarSesion(txtContraseña, txtNumeroControl, this);
+            }else{
+                JOptionPane.showMessageDialog(null, "Revise los campos",
+                    "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (SQLException ex) {  
-            JOptionPane.showMessageDialog(this, "El usuario o la contraseña son incorrectos",
-                                            "Error",JOptionPane.ERROR_MESSAGE);
-        } 
-        //limpiamos las cajas de texto
-        txtNumeroControl.setText(null);
-        txtContraseña.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null, "Revise los campos",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
@@ -281,6 +268,7 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
