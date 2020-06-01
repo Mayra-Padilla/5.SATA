@@ -22,7 +22,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form Canalizaciones
      */
-    public AgregarUsuario() {
+    public AgregarUsuario(String idUser) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
