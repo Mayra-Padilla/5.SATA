@@ -3,6 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/* Número de  requerimientos: RF_17, RN_21
+    Clase: agregarUsuario
+    Metodos: agreggarUser, Login, InicicioSesion
+ */
+
 package Vista;
 
 import java.sql.Connection;
@@ -18,10 +24,6 @@ import Controlador.AgregarUser;
  */
 public class AgregarUsuario extends javax.swing.JFrame {
 
-/*Requrimientos:
-    Clase:
-    Metodos:
-    */
     /**
      * Creates new form Canalizaciones
      */
