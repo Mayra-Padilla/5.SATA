@@ -82,14 +82,10 @@ public class AgregarUsuario extends javax.swing.JFrame {
         papa = new javax.swing.JTextField();
         madre = new javax.swing.JLabel();
         mama = new javax.swing.JTextField();
-        telemergencia = new javax.swing.JLabel();
-        temer = new javax.swing.JTextField();
         carrera = new javax.swing.JLabel();
         carre = new javax.swing.JTextField();
         sem = new javax.swing.JLabel();
         semestre = new javax.swing.JTextField();
-        enfermedades = new javax.swing.JLabel();
-        canal = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         pat = new javax.swing.JTextField();
@@ -286,15 +282,11 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
         madre.setText("Nombre madre:");
 
-        telemergencia.setText("Teléfono de emergencia:");
-
         carrera.setText("Carrera:");
 
         sem.setText("Semestre:");
 
         semestre.setToolTipText("Numero Entero");
-
-        enfermedades.setText("Canalizaciones");
 
         jLabel12.setText("ApPaterno");
 
@@ -346,25 +338,13 @@ public class AgregarUsuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(correo))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(sem)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(semestre))
-                            .addComponent(telemergencia))
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(temer, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(carrera)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(carre))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(enfermedades)
-                                .addGap(18, 18, 18)
-                                .addComponent(canal))))
+                        .addComponent(sem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(semestre, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(carrera)
+                        .addGap(18, 18, 18)
+                        .addComponent(carre))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(madre)
@@ -411,17 +391,11 @@ public class AgregarUsuario extends javax.swing.JFrame {
                     .addComponent(mama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(telemergencia)
-                    .addComponent(temer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(carrera)
-                    .addComponent(carre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(carre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sem)
-                    .addComponent(semestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(enfermedades)
-                    .addComponent(canal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(semestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         Seccion.addTab("Alumno", jPanel5);
@@ -566,7 +540,6 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane Seccion;
-    private javax.swing.JTextField canal;
     private javax.swing.JTextField carre;
     private javax.swing.JLabel carrera;
     private javax.swing.JComboBox<String> cbxHorarioProf;
@@ -574,7 +547,6 @@ public class AgregarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel correoInst;
     private javax.swing.JTextField dir;
     private javax.swing.JLabel direccion;
-    private javax.swing.JLabel enfermedades;
     private javax.swing.JTextField id;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -613,8 +585,6 @@ public class AgregarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField semestre;
     private javax.swing.JLabel tel;
     private javax.swing.JTextField telefono;
-    private javax.swing.JLabel telemergencia;
-    private javax.swing.JTextField temer;
     private javax.swing.JTextField txtApMaternoProf;
     private javax.swing.JTextField txtApPaternoProf;
     private javax.swing.JTextField txtCorreoProf;

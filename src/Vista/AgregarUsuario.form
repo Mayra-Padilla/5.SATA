@@ -487,30 +487,13 @@
                                   <Component id="correo" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="sem" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="semestre" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="telemergencia" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="temer" min="-2" pref="69" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="carrera" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="carre" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="enfermedades" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="canal" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="sem" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="semestre" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="carrera" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="carre" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -570,19 +553,12 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="telemergencia" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="temer" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="carrera" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="carre" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="sem" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="semestre" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="enfermedades" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="canal" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="38" max="32767" attributes="0"/>
+                          <EmptySpace pref="69" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -653,13 +629,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="mama">
                 </Component>
-                <Component class="javax.swing.JLabel" name="telemergencia">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Tel&#xe9;fono de emergencia:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="temer">
-                </Component>
                 <Component class="javax.swing.JLabel" name="carrera">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Carrera:"/>
@@ -676,13 +645,6 @@
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="Numero Entero"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="enfermedades">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Canalizaciones"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="canal">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
                   <Properties>
