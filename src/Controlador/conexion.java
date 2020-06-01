@@ -1,4 +1,13 @@
-
+/* 5.Patriots
+    Proyecto: SATA
+    Version: 1.1
+    01/Junio/2020
+    Caso de uso: iniciarSesion 
+    El caso de uso utiliza para el funcionamiento:
+        -Número de  requerimientos: RF_01, FR_19, RN_21
+        -Clase: Login, InicioSesion
+        -Metodos: verficarSesion
+ */
 package Controlador;
 
 import java.sql.Connection;
