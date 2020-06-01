@@ -4,9 +4,14 @@
  * and open the template in the editor.
  */
 package Vista;
-import Controlador.TablaCU;
+
+import Controlador.*;
+import javax.swing.JOptionPane;
+
 public class ControlUser extends javax.swing.JFrame {
+
     TablaCU tb = new TablaCU();
+
     /**
      * Creates new form ControlUser
      */
@@ -237,11 +242,19 @@ public class ControlUser extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
+        if (tbCU.getSelectedRow() != -1) {
+            ModificarUsuario mu = new ModificarUsuario();
+            mu.VerificarId(String.valueOf(tbCU.getValueAt(tbCU.getSelectedRow(), 0)));
+        }else{
+           JOptionPane.showMessageDialog(null, "No ha seleccionado usuario",
+                    "Error", JOptionPane.ERROR_MESSAGE); 
+        }
+
     }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
