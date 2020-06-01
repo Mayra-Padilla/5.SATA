@@ -25,7 +25,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
     public AgregarUsuario(String idUser) {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(AgregarUsuario.DO_NOTHING_ON_CLOSE);
+        
     }
 
     /**
