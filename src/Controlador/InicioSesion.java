@@ -2,7 +2,7 @@
     Proyecto: SATA
     Version: 1.1
     01/Junio/2020
-    Caso de uso: AgregarUsuario
+    Caso de uso: iniciarSesion
     El caso de uso utiliza para el funcionamiento:
         -Número de  requerimientos: RF_01, FR_19, RN_21, RN_24
         -Clase: Login, InicioSesion
