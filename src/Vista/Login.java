@@ -38,6 +38,7 @@ public class Login extends javax.swing.JFrame {
 //    PreparedStatement ps;
 
     //En este metodo establecemos los valores para la visualizacion de la ventana
+    //Número de  requerimiento: RF_01
     public Login() {
 
         this.setVisible(true);
@@ -239,6 +240,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //En este parte de codigo obtendremos la informacion de los cuadros de texto para validar al usuario
+    //Número de  requerimientos: RF_01
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
         //Obtenemos el texto dentro de cada caja de texto
