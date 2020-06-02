@@ -9,6 +9,7 @@
     Version: 1.1
     01/Junio/2020
     Caso de uso: Menu 
+Descripcion: La clase Menu se encarga una vez de que el usuario entra este acceda a las opciones del sistema.
     El caso de uso utiliza para el funcionamiento:
         -Número de  requerimientos: FR_01, RF_02, FR_03, FR_09, RF_10, FR_11, RN_18, RN_24
         -Clase: Menu
