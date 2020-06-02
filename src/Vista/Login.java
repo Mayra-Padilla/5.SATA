@@ -9,6 +9,7 @@
     Version: 1.1
     01/Junio/2020
     Caso de uso: iniciarSesion 
+Descripcion: En el caso de la clase login es la ventana en donde nuestros usuario ingresaran los datos para hacer el logeo
     El caso de uso utiliza para el funcionamiento:
         -Número de  requerimientos: RF_01, FR_19, RN_21, RN_24
         -Clase: Login, InicioSesion
@@ -29,12 +30,14 @@ import Controlador.InicioSesion;
  *
  * @author Mayra
  */
+
 public class Login extends javax.swing.JFrame {
 //    //La variable cin realizara la interaccion con la BD
 //    Connection conn = Controlador.conexion.getConexion();
 //    //ps sera la variable que utilizaremos para ejecutar consultas
 //    PreparedStatement ps;
 
+    //En este metodo establecemos los valores para la visualizacion de la ventana
     public Login() {
 
         this.setVisible(true);
@@ -235,6 +238,7 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //En este parte de codigo obtendremos la informacion de los cuadros de texto para validar al usuario
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
         //Obtenemos el texto dentro de cada caja de texto
@@ -256,6 +260,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    //El amin solo se encarga para que se visualize la ventana de login
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

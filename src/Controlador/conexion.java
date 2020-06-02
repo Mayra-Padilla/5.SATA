@@ -3,6 +3,7 @@
     Version: 1.1
     01/Junio/2020
     Caso de uso: iniciarSesion 
+Descripcion: El controlador de conexion es para establecer la comunicacion con la base de datos del SQL Server.
     El caso de uso utiliza para el funcionamiento:
         -Número de  requerimientos: RF_01, FR_19, RN_21
         -Clase: Login, InicioSesion
@@ -20,6 +21,7 @@ import java.sql.Statement;
 public class conexion {
     static Connection contacto = null;
     
+    //en este metodo estamos estableciendo la conectividad al servidos y a la base de datos con la que se trabajara
     public static Connection getConexion(){
 //        DESKTOP-JH0QBD0
         String url = "jdbc:sqlserver://DESKTOP-JH0QBD0:1433;databaseName=TutoriasITL;";
@@ -38,7 +40,7 @@ public class conexion {
         return contacto;
     }
     
-   //MANDAR A PEDIR UNA CONSULTA DIRECTAMENTE A BD
+   //Aqui se manda a pedir una consulta directa a la BD
     public static ResultSet Consulta(String consulta){
         Connection con = getConexion();
         Statement declara;
