@@ -1,7 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 5.Patriots
+    Proyecto: SATA
+    Version: 1.1
+    01/Junio/2020
+    Caso de uso: modificarUsuario 
+Descripcion: La siguiente clase se encarga de actualizar la información de un usuario en particular.
+    El caso de uso utiliza para el funcionamiento:
+        -Número de  requerimientos: RF_03,RN_20.
+        -Clase: ControlUser.
+        -Metodos: ModificarUsuario,mostrarTBPane,LlenarIdAlumno,VerificarIdUser,modificarProfesor,modificarAlumno.
  */
 package Controlador;
 
@@ -16,6 +22,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+//Clase que contienen los métodos para modificar la información de un usuario. 
+//Número de Requerimientos: RF_03, RN_20
 public class ModificarUsuario {
 
     //La variable cin realizara la interaccion con la BD
@@ -23,11 +31,14 @@ public class ModificarUsuario {
     //ps sera la variable que utilizaremos para ejecutar consultas
     PreparedStatement ps;
 
+    //Este método se encarga llenar los campos de texto en pantalla en la sección de Profesor
+    //Número de Requerimiento:RF_03,RN_20 
     public int LlenarIdProfesor(String id, JTextField txtNoEmpleado, JTextField txtNombre,
             JTextField txtApPaterno, JTextField txtApMaterno, JTextField txtDepartamento,
             JTextField txtCorreo, JComboBox txtHorario, JTextArea txtDescripcion) {
         try {
 
+            //Se concatena la siguiente sentencia para realizar consulta en la BD
             String consulta = "SELECT p.idProfesor, u.nombre, u.apPaterno, u.apMaterno, "
                     + "p.departamento, u.correo, p.horario, p.descripcion "
                     + "FROM profesor p INNER JOIN usuario u ON u.idUsuario = p.idProfesor "
@@ -38,8 +49,10 @@ public class ModificarUsuario {
 
             st = conn.createStatement();
 
+            //Asignación a una variable con el resultado de la consulta.
             ResultSet rs2 = st.executeQuery(consulta);
 
+            //Llenado de los campos de texto
             while (rs2.next()) {
                 txtNoEmpleado.setText(rs2.getString(1));
                 txtNombre.setText(rs2.getString(2));
@@ -62,10 +75,13 @@ public class ModificarUsuario {
         return 0;
     }
 
+    //Método que sirve para llenar los campos de texto en el panel de Alumno
+    //Número de Requerimientos: RF_03, RN_20.
     public int LlenarIdAlumno(String id, JTextField idAlu, JTextField nom, JTextField apP,
             JTextField apM, JTextField dir, JTextField tel, JTextField prom, JTextField mail,
             JTextField noP, JTextField noM, JTextField sem, JTextField carre) {
         try {
+            //Concatenación de un string para realizar una consulta
             String consulta = "SELECT a.idAlumno, u.nombre, u.apPaterno, u.apMaterno, a.direccion, "
                     + "a.telEmergencia, a.promedioGeneral, u.correo, \n"
                     + "a.nombrePadre, a.nombreMadre, a.semestre, a.carrera FROM alumno a \n"
@@ -74,8 +90,10 @@ public class ModificarUsuario {
             Statement st;
             st = conn.createStatement();
 
+            //Asignación en una variable con el resultado de la consulta realizada
             ResultSet rs2 = st.executeQuery(consulta);
 
+            //Llenado de los campos de texto.
             while (rs2.next()) {
                 idAlu.setText(rs2.getString(1));
                 nom.setText(rs2.getString(2));
@@ -96,6 +114,8 @@ public class ModificarUsuario {
         return 0;
     }
 
+//Método que recibe como prámetros campos de texto para mostrar Tabla
+//Número de Requerimientos: RF_03
     public void mostrarTBPane(JTextField idA, JTextField idP, JTabbedPane tb) {
 
         if (!"".equals(idA.getText())) {
@@ -107,16 +127,21 @@ public class ModificarUsuario {
         }
     }
 
+//Método de verificación de la existincia del usuario a través de su número de control o clave.
+//Número de Requerimiento: RN_20.
     public boolean VerificarIdUser(String id) {
         boolean exist = false;
         try {
-
+//Concatenación de la sentencia a ejecutar.
             String consulta = "SELECT idUsuario FROM usuario "
                     + "WHERE idUsuario = " + id;
             Statement st;
+//Ejecución de la sentencia
             st = conn.createStatement();
+//Asignación del resultado de la consulta
             ResultSet rs = st.executeQuery(consulta);
 
+//Verificación de la existencia del usuario.
             if (rs.next()) {
                 exist = true;
             }
@@ -128,6 +153,8 @@ public class ModificarUsuario {
         return exist;
     }
 
+//Método para modificar Profesor
+//Número de Requerimiento: RF_03, RN_20
     public void modificarProfesor(JTextField txtNoEmpleado, JTextField txtNombre,
             JTextField txtApPaterno, JTextField txtApMaterno, JTextField txtDepartamento,
             JTextField txtCorreo, JComboBox txtHorario, JTextArea txtDescripcion) {
@@ -174,6 +201,8 @@ public class ModificarUsuario {
         }
     }
 
+//Método de modificar un Alumno
+//Número de Requerimiento: RF_03, RN_20.
     public void modificarAlumno(JTextField idAlu, JTextField nom, JTextField apP,
             JTextField apM, JTextField dir, JTextField tel, JTextField prom, JTextField mail,
             JTextField noP, JTextField noM, JTextField sem, JTextField carre) {
