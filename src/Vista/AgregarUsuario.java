@@ -528,7 +528,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
     private void newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserActionPerformed
         AgregarUser au = new AgregarUser();
         ModificarUsuario mu = new ModificarUsuario();
-        if (Seccion.getSelectedIndex() == 0) {
+        if (Seccion.getSelectedIndex() == 0) { // verifica la seccion en la que se encuentra
+            //si el id ya existe realiza una actualizacion
             if (mu.VerificarIdUser(txtNoEmpleadoProfesor.getText())) {
                 int conf = JOptionPane.showConfirmDialog(mat, "¿Desea  actualizar?",
                         "Confirmar actualización", JOptionPane.INFORMATION_MESSAGE);
@@ -537,7 +538,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
                     mu.modificarProfesor(txtNoEmpleadoProfesor, txtNombreProf, txtApPaternoProf,
                             txtApMaternoProf, txtDepartamentoProf, txtCorreoProf, cbxHorarioProf, txtDescripcionProf);
                 }
-            } else {
+            } else {//Realiza insert sino no existe el id
                 System.out.println("Profesor");
                 String combo = (String) cbxHorarioProf.getSelectedItem();
                 au.agregarProfesor(txtNoEmpleadoProfesor, txtNombreProf, txtApPaternoProf,
@@ -546,15 +547,15 @@ public class AgregarUsuario extends javax.swing.JFrame {
             }
 
         } else if (Seccion.getSelectedIndex() == 1) {
-            if (mu.VerificarIdUser(id.getText())) {
+            if (mu.VerificarIdUser(id.getText())) {//verifica si existe el id
                 int conf = JOptionPane.showConfirmDialog(mat, "¿Desea  actualizar?",
                         "Confirmar actualización", JOptionPane.INFORMATION_MESSAGE);
-                if (conf == 0) {
+                if (conf == 0) {//si existe actualiza los datos
                     //actualiza
                     mu.modificarAlumno(id, nombre, pat, mat, dir, telefono,
                             prom, correo, papa, mama, semestre, carre);
                 }
-            } else {
+            } else {//Realiza insert sino no existe el id
                 System.out.println("Alumno");
                 au.agregarAlumno(id, nombre, pat, mat, dir, telefono, prom,
                         correo, papa, mama, semestre, carre);
