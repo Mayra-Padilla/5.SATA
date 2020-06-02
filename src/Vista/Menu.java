@@ -27,6 +27,7 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    //En este metodo se establecen los componentes de la ventana y el tamaño de la misma
     public Menu() {
         initComponents();
         this.setLocation(250,80);
@@ -235,7 +236,7 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //En esta parte es para su validar la visualizacion de la ventana
     private void btnControlUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnControlUserActionPerformed
         // TODO add your handling code here:
         ControlUser cu = new ControlUser();
@@ -245,6 +246,7 @@ public class Menu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    //En el metodo main es para llamar a Menu.java y que este se visualize
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
