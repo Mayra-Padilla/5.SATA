@@ -239,12 +239,14 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     //En esta parte es para su validar la visualizacion de la ventana
+    //Número de  requerimientos: FR_01, RF_02
     private void btnControlUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnControlUserActionPerformed
         // TODO add your handling code here:
         ControlUser cu = new ControlUser();
         cu.setVisible(true);
     }//GEN-LAST:event_btnControlUserActionPerformed
-
+    //En este metodo es para cerrar la sesion de nuestro usuario
+    //Número de  requerimientos: FR_01, RF_12
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         // TODO add your handling code here:
         InicioSesion is = new InicioSesion();
@@ -258,6 +260,7 @@ public class Menu extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     //En el metodo main es para llamar a Menu.java y que este se visualize
+    //Número de  requerimiento: FR_02
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
