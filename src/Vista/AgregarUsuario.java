@@ -34,6 +34,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form Canalizaciones
      */
+    //En este metodo se establecen los valores obtenidos de los campos de texto para insertarlo en la BD
+    //Número de  requerimientos: RF_17, RN_20
     public AgregarUsuario(String idUser) {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -521,6 +523,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_correoActionPerformed
 
     //actionAPerformed para nuevos usuarios
+    //En este metodo de actionPerformed es para la actualizacion de los datos de los usuarios registrados
+    //Número de  requerimientos: RF_17, RN_20, RN_21
     private void newUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserActionPerformed
         AgregarUser au = new AgregarUser();
         ModificarUsuario mu = new ModificarUsuario();
@@ -559,6 +563,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_newUserActionPerformed
 
+    //Este metodo solo crea la visualizacion de nuestra ventana de agregarUsuario
+    //Número de  requerimientos: RF_17
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -569,6 +575,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    //En este metodo permite que se visualice la ventana
+    //Número de  requerimientos: RF_17
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
