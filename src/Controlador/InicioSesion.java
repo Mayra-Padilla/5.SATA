@@ -64,4 +64,18 @@ public class InicioSesion {
         txtNumeroControl.setText(null);
         txtContraseña.setText("");
     }
+
+    public void cerrarSesion() {
+        try {
+
+            String sesion = "UPDATE inicioSesion SET estado = 0 WHERE estado = '1'";
+
+            ps = conn.prepareStatement(sesion);
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex,
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }

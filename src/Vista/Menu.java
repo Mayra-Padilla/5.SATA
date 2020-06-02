@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 5.Patriots
     Proyecto: SATA
@@ -16,6 +11,8 @@
  */
 
 package Vista;
+
+import Controlador.InicioSesion;
 
 /**
  *
@@ -124,6 +121,11 @@ public class Menu extends javax.swing.JFrame {
 
         btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/CerrarSesion.png"))); // NOI18N
         btnCerrarSesion.setToolTipText("Cerrar sesión");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
 
         btnCreditos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Creditos.png"))); // NOI18N
         btnCreditos.setToolTipText("Créditos escolares");
@@ -240,6 +242,15 @@ public class Menu extends javax.swing.JFrame {
         ControlUser cu = new ControlUser();
         cu.setVisible(true);
     }//GEN-LAST:event_btnControlUserActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+        InicioSesion is = new InicioSesion();
+        is.cerrarSesion();
+        Login obj = new Login();
+        obj.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
