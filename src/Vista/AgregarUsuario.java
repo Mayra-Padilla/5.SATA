@@ -12,7 +12,7 @@
     El caso de uso utiliza para el funcionamiento:
         -Número de  requerimientos: RF_17, RN_21
         -Clase: agregarUsuario, newUserActionPerformed
-        -Metodos: agreggarUser, Login, InicicioSesion
+        -Metodos: agreggarUser, Login, modificarUsuario
  */
 package Vista;
 
