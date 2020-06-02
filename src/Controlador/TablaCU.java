@@ -5,6 +5,17 @@
  */
 package Controlador;
 
+/* 5.Patriots
+    Proyecto: SATA
+    Version: 1.1
+    01/Junio/2020
+    Caso de uso: obtenerInformacion
+    El caso de uso utiliza para el funcionamiento:
+        -Número de  requerimientos: RF_03, RN_21, RN-22
+        -Clase: Login, InicioSesion, MisDatos, PerfilTutor
+        -Metodos: TablaCU, llenarTabla
+ */
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +32,8 @@ public class TablaCU {
     Connection cin = conexion.getConexion();
     PreparedStatement ps;
     DefaultTableModel tabla;
-
+    
+    //Este metodo se basa en que obtendremos la informacion de los usuario que actualmente estan registrados
     public void llenarTabla(JTable tablaCU) {
         String col[] = {"IdUsuario", "Nombre", "apPaterno", "apMaterno"};
         DefaultTableModel model = new DefaultTableModel(null, col) {
