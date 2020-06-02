@@ -10,8 +10,10 @@ package Controlador;
     Version: 1.1
     01/Junio/2020
     Caso de uso: obtenerInformacion
+Descripcio: La tablaCU sirve para el buscar los datos dependiendo 
+                  si es estudiante o profesor segun si id.
     El caso de uso utiliza para el funcionamiento:
-        -Número de  requerimientos: RF_03, RN_21, RN-22
+        -Número de  requerimientos: RF_03, RF_08, RN_20, RN_21, RN_22
         -Clase: Login, InicioSesion, MisDatos, PerfilTutor
         -Metodos: TablaCU, llenarTabla
  */
@@ -34,16 +36,18 @@ public class TablaCU {
     DefaultTableModel tabla;
     
     //Este metodo se basa en que obtendremos la informacion de los usuario que actualmente estan registrados
+    //Número de  requerimientos: RF_03, RF_08, RN_20
     public void llenarTabla(JTable tablaCU) {
         String col[] = {"IdUsuario", "Nombre", "apPaterno", "apMaterno", "Departamento",
-        "Carrera", "Semestre", "Dirección", "Tel.Emergencia"};
+        "Carrera", "Semestre", "Dirección", "Tel.Emergencia"}; //Primero se define su informacion basica
         DefaultTableModel model = new DefaultTableModel(null, col) {
             //la tabla no es editable
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return false;
             }
         };
-
+        // luego la consulta se basa en cierta informacion para determinar si la informacion del usuario
+        //coincide con un usuario del tipo alumnno o profesor en cuantos a sus id para mostrarlos
         String consulta = "SELECT u.*, p.departamento, a.carrera, a.semestre, "
                 + "a.direccion, a.telEmergencia FROM usuario u "
                 + "FULL JOIN profesor p ON u.idUsuario = p.idProfesor "
@@ -65,7 +69,7 @@ public class TablaCU {
                 dato[8] = result.getString(9);
                 model.addRow(dato);
             }
-
+            //el arreglo es para conseguir los datos segun el usuario y acomodarlos en la tabla para visualizarla
             tablaCU.setModel(model);
         } catch (SQLException e) {
             e.printStackTrace();;
